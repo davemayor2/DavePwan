@@ -30,6 +30,13 @@ import eliteEastLand1 from "@/assets/eliteEastLand1.jpeg";
 import eliteEastland2 from "@/assets/eliteEastland2.jpeg";
 import ugwumbaEstate from "@/assets/ugwumbaEstate.jpeg";
 import waleGraphic from "@/assets/waleGraphic.jpeg";
+import chisom from "@/assets/chisom.png";
+import naomi from "@/assets/naomi.png";
+import amara from "@/assets/amara.png";
+import korede from "@/assets/korede.png";
+import precious from "@/assets/precious.png";
+import tochukwu from "@/assets/tochukwu.png";
+
 
 export {
   propsBg,
@@ -54,6 +61,12 @@ export {
   eliteEmpire,
   ugwumbaEstate,
   waleGraphic,
+  korede,
+  naomi,
+  precious,
+  tochukwu,
+  amara,
+  chisom,
   greenView,
   FaqImg,
   logo,

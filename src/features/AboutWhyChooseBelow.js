@@ -1,7 +1,7 @@
 import React from "react";
 import AWCBSection from "./AWCBSection";
 import Image from "next/image";
-import { urbanLegacy, Emeka, Kudirat, Joshua, Okoro, waleGraphic } from "./assets";
+import { urbanLegacy, Emeka, Kudirat, Joshua, Okoro, waleGraphic, naomi, chisom, tochukwu,  } from "./assets";
 
 const AboutWhyChooseBelow = () => {
   const teamMembers = [
@@ -15,34 +15,57 @@ const AboutWhyChooseBelow = () => {
       title: "Head of Admin, Asaba Office",
       src: Kudirat,
     },
+    
     {
       name: "Mr. Joshua Godwin",
       title: "Mentee",
       src: Joshua,
     },
+    
     {
-      name: "MR. Iheanacho Okoro",
+      name: "Mr. Iheanacho Okoro",
       title: "Mentee",
       src: Okoro,
     },
     {
-      name: "MR. Ayodele Olawale",
+      name: "Mr. Korede Tiamiyu",
+      title: "Head of Operations, Lagos",
+      src: Kudirat,
+    },
+    {
+      name: "Mr. Isaiah Stanley",
+      title: "Social Media Manager",
+      src: tochukwu,
+    },
+    {
+      name: "Mr. Ayodele Olawale",
       title: "Graphic Designer",
       src: waleGraphic,
     },
+    {
+      name: "Mr. Chisom Ogoke",
+      title: "Operations Surveyor",
+      src: chisom,
+    },
+    {
+      name: "Ms. Eze Ijeoma",
+      title: "Content Strategist",
+      src: naomi,
+    },
+    
   ];
 
   const testimonials = [
     {
       name: "Olaide Fiyasoyi",
       content:
-        "Lorem ipsum dolor sit amet consectetur. Lacus morbi ultrices diam rhoncus etiam rhoncus. Ut viverra in lobortis fringilla. Lorem ipsum dolor sit amet consectetur. Lacus morbi ultrices diam rhoncus etiam rhoncus. Ut viverra in lobortis fringilla.",
+        "“Investing with PWAN ELITE was the best decision I made. The process was seamless, and I got my allocation immediately after payment. Truly trustworthy!",
       rating: 5,
     },
     {
       name: "Nneka Maduka",
       content:
-        "As an IT professional, I love adding a personal touch to my laptop, water bottle, and desk setup. These  are high-quality, waterproof, and inspiring—perfect for keeping my yoga mindset strong during long work hours.Highly recommend!",
+        "What I love about PWAN ELITE is their transparency. Within 3 months I had my documents ready, just as promised. No stress at all",
       rating: 5,
     },
   ];
