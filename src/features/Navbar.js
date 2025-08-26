@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -6,7 +6,35 @@ import { logo } from './assets'; // Assuming 'logo' is imported from './assets'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLightBackground, setIsLightBackground] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // When a sentinel intersects near the top, switch scheme accordingly
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const desired = entry.target.getAttribute('data-nav-contrast');
+            setIsLightBackground(desired === 'light');
+          }
+        });
+      },
+      {
+        // Offset top to approximate navbar height so we detect the section under the navbar
+        root: null,
+        rootMargin: '-80px 0px 0px 0px',
+        threshold: 0,
+      }
+    );
+
+    const sentinels = document.querySelectorAll('[data-nav-contrast]');
+    sentinels.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const navItems = [
     {name: 'Home', href: '/'},
@@ -14,10 +42,13 @@ const Navbar = () => {
     {name: 'Our Properties', href: '/properties'},
     {name: 'Our Services', href: '/services'},
     {name: 'Contact Us', href: '/contact'},
-  ]
+  ];
+
+  const navBgClass = isLightBackground ? 'bg-white/70' : 'bg-black/20';
+  const iconColorClass = isLightBackground ? 'text-gray-700 hover:text-gray-900' : 'text-gray-200 hover:text-white';
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md shadow">
+    <nav className={`fixed top-0 left-0 right-0 z-50 ${navBgClass} backdrop-blur-md shadow`}>
       <div className="container px-6 py-4 mx-auto">
         <div className="flex items-center justify-between">
 
@@ -37,26 +68,30 @@ const Navbar = () => {
           {/* Nav Items (Middle) - Hidden on mobile */}
           <div className="hidden lg:flex items-center justify-center flex-1">
             <div className="flex items-center space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`
+              {navItems.map((item) => {
+                const isActive = router.pathname === item.href;
+                const colorClass = isActive
+                  ? 'text-red-600'
+                  : isLightBackground
+                  ? 'text-gray-900'
+                  : 'text-white';
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`
                     text-sm font-medium transition-colors duration-300 relative
-                    hover:text-red-500 dark:hover:text-red-400
-                    ${router.pathname === item.href
-                      ? 'text-red-500 dark:text-red-400'
-                      : 'text-gray-700 dark:text-gray-200'
-                    }
+                    hover:text-red-500 ${colorClass}
                   `}
-                >
-                  {item.name}
-                  {/* Active underline */}
-                  {router.pathname === item.href && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-red-500"></span>
-                  )}
-                </Link>
-              ))}
+                  >
+                    {item.name}
+                    {/* Active underline */}
+                    {isActive && (
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-red-500"></span>
+                    )}
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
@@ -77,7 +112,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+              className={`${iconColorClass} focus:outline-none`}
               aria-label="toggle menu"
             >
               {isOpen ? (
@@ -114,27 +149,31 @@ const Navbar = () => {
           }`}
         >
           <div className="px-2 pt-2 pb-3 space-y-1 mt-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`
+            {navItems.map((item) => {
+              const isActive = router.pathname === item.href;
+              const colorClass = isActive
+                ? 'text-red-600'
+                : isLightBackground
+                ? 'text-gray-900'
+                : 'text-white';
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`
                   block px-3 py-2 text-base font-medium transition-colors duration-300 relative
-                  hover:text-red-500 dark:hover:text-red-400
-                  ${router.pathname === item.href
-                    ? 'text-red-500 dark:text-red-400'
-                    : 'text-gray-700 dark:text-gray-200'
-                  }
+                  hover:text-red-500 ${colorClass}
                 `}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-                {/* Active underline for mobile */}
-                {router.pathname === item.href && (
-                  <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-red-500"></span>
-                )}
-              </Link>
-            ))}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                  {/* Active underline for mobile */}
+                  {isActive && (
+                    <span className="absolute -bottom-1 left-3 right-3 h-0.5 bg-red-500"></span>
+                  )}
+                </Link>
+              );
+            })}
 
             {/* Mobile Get Started Button */}
             <div className="px-3 pt-4">

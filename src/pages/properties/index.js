@@ -7,7 +7,7 @@ import {
   propsBg, akuRuo, speak, urbanLegacy, seeLove, eastView,
   koleAyo, handpick, alaomaLuxury, obiEze, eliteCity,
   eliteCasa, eliteEmpire, greenView, ugochiEstate,
-  ugwumbaEstate
+  ugwumbaEstate, lavenderCourts, eliteEastland2
 } from "@/features/assets";
 
 import PropFeaturesCard from '@/features/PropFeaturesCard';
@@ -176,11 +176,23 @@ const IndexPage = () => {
       location: "Anambra",
       description: "PWAN ELITE is passionate about revealing the amazing potentials available in the real estate industry to the world by providing cost-effective luxury properties to help clients become land/home owners easily and faster.",
       imageAlt: "Ugwumba Estate",
-      src: ugwumbaEstate,
+      src: lavenderCourts,
       subscriptionFormUrl: "/downloads/UGWUMBA_SUBS_FORM.pdf",
-      flyerUrl: "/downloads/ugwumbaEstate.jpeg",
+      flyerUrl: "/downloads/lavenderCourts.jpeg",
       subscriptionFormFileName: "Ugwumba_Estate_Form.pdf",
-      flyerFileName: "Ugwumba_Estate_Flyer.png",
+      flyerFileName: "Lavender_Courts_Flyer.jpeg",
+    },
+    {
+      id: "eel2 ",
+      title: "Elite Eastland Phase 2",
+      location: "Imo",
+      description: "PWAN ELITE is passionate about revealing the amazing potentials available in the real estate industry to the world by providing cost-effective luxury properties to help clients become land/home owners easily and faster.",
+      imageAlt: "Elite Eastland Phase 2",
+      src: eliteEastland2,
+      subscriptionFormUrl: "/downloads/ELITE_EASTLAND_PHASE_2_SUBS_FORM.pdf",
+      flyerUrl: "/downloads/eliteEastland2.jpeg",
+      subscriptionFormFileName: "Elite_Eastland_Phase_2_Subscription_Form.pdf",
+      flyerFileName: "Elite_Eastland_Phase_2_Flyer.jpeg",
     },
   ];
 

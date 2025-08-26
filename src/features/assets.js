@@ -35,7 +35,10 @@ import naomi from "@/assets/naomi.png";
 import amara from "@/assets/amara.png";
 import korede from "@/assets/korede.png";
 import precious from "@/assets/precious.png";
+import lavenderCourts from "@/assets/lavenderCourts.jpeg";
 import tochukwu from "@/assets/tochukwu.png";
+import pius from "@/assets/pius.png";
+import yinka from "@/assets/yinka.png"
 
 
 export {
@@ -45,7 +48,10 @@ export {
   Emeka,
   Kudirat,
   Joshua,
+  lavenderCourts,
   Okoro,
+  pius,
+  yinka,
   aboutBg,
   akuRuo,
   urbanLegacy,

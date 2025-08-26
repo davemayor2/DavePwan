@@ -5,12 +5,17 @@ import { HomeDiscover } from "@/features/HomeDiscover";
 import { HomeHero } from "@/features/HomeHero";
 import { HomeSub } from "@/features/HomeSub";
 import { HomeValues } from "@/features/HomeValues";
+import FadeIn from "@/features/FadeIn";
 
 export default function Home() {
     const heroData = {
         title: "Exposing Clients to Goldmine.",
         description: "Exposing clients to goldmine that abounds in land and housing globally and spreading empowerment through real estate opportunities.",
         backgroundImage: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        // Add your video file to the public folder and update this path
+        // Example: videoSrc: "/hero-video.mp4" (for a file in public/hero-video.mp4)
+        // Example: videoSrc: "/videos/hero.mp4" (for a file in public/videos/hero.mp4)
+        videoSrc: "/heroSectionVid.mp4", // Replace with your actual video filename
         ctaButton: {
             text: "Contact Us",
             href: "/contact" // <<< ADDED THIS LINE for the button to link to /contact
@@ -74,12 +79,14 @@ export default function Home() {
   return (
       <div className="min-h-screen">
         <HomeHero {...heroData} />
-        <HomeBuildQuali {...buildingData} />
-        <HomeCert/>
-        <HomeDiscover {...discoverData}/>
-        <HomeCardGrid cards={cardsData}/>
-        <HomeValues {...valuesData}/>
-        <HomeSub />
+        {/* Light contrast sentinel after hero to switch navbar to dark text */}
+        <div data-nav-contrast="light" className="h-1" aria-hidden="true"></div>
+        <FadeIn y={24}><HomeBuildQuali {...buildingData} /></FadeIn>
+        <FadeIn y={24} delayMs={100}><HomeCert/></FadeIn>
+        <FadeIn y={24} delayMs={200}><HomeDiscover {...discoverData}/></FadeIn>
+        <FadeIn y={24} delayMs={300}><HomeCardGrid cards={cardsData}/></FadeIn>
+        <FadeIn y={24} delayMs={400}><HomeValues {...valuesData}/></FadeIn>
+        <FadeIn y={24} delayMs={500}><HomeSub /></FadeIn>
     </div>
   );
 }

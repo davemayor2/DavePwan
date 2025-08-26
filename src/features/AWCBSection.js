@@ -14,6 +14,8 @@ const AWCBSection = ({
   iconTitle,
   image,
   description: desc,
+  horizontalScroll = false,
+  featuredName,
 }) => {
   return (
     <section className="my-12">
@@ -59,26 +61,83 @@ const AWCBSection = ({
         </div>
       )}
       {items && type === "team" && (
-        <div
-          className={`grid grid-cols-1 ${
-            columns === 4 ? "md:grid-cols-4 overflow-x-hidden" : "md:grid-cols-1"
-          } gap-6 mt-6`}
-        >
-          {items.map((item, index) => (
-            <div key={index} className="text-center">
-              <Image
-                className="h-[24rem] w-[28rem] flex items-center justify-center mb-2"
-                src={item.src}
-                alt={item.name}
-              />
-              <div className="bg-gray-300 ">
-                {item.image}
-              </div>
-              <h3 className="font-semibold">{item.name}</h3>
-              <p className="text-gray-600">{item.title}</p>
+        horizontalScroll ? (
+          <div className="mt-6 overflow-x-auto">
+            <div className="flex gap-6 px-1 snap-x snap-mandatory">
+              {items.map((item, index) => (
+                <div key={index} className="text-center w-64 shrink-0 snap-center">
+                  <div className="h-64 w-64 bg-white rounded-lg overflow-hidden mb-3 flex items-center justify-center">
+                    <Image
+                      className="h-full w-full object-contain"
+                      src={item.src}
+                      alt={item.name}
+                    />
+                  </div>
+                  <h3 className="font-semibold">{item.name}</h3>
+                  <p className="text-gray-600">{item.title}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ) : (
+          featuredName ? (
+            <div className="mt-6">
+              {/* Featured on top */}
+              {(() => {
+                const featured = items.find((m) => m.name === featuredName);
+                const rest = items.filter((m) => m.name !== featuredName);
+                return (
+                  <>
+                    {featured && (
+                      <div className="flex justify-center mb-10">
+                        <div className="text-center">
+                          <div className="h-64 w-64 bg-white rounded-lg overflow-hidden mb-3 flex items-center justify-center">
+                            <Image className="h-full w-full object-contain" src={featured.src} alt={featured.name} />
+                          </div>
+                          <h3 className="font-semibold">{featured.name}</h3>
+                          <p className="text-gray-600">{featured.title}</p>
+                        </div>
+                      </div>
+                    )}
+                    {/* Grid for the rest */}
+                    <div className={`grid grid-cols-1 ${columns ? `md:grid-cols-${columns}` : 'md:grid-cols-3'} gap-6`}>
+                      {rest.map((item, index) => (
+                        <div key={index} className="text-center">
+                          <div className="h-64 w-64 bg-white rounded-lg overflow-hidden mb-3 mx-auto flex items-center justify-center">
+                            <Image className="h-full w-full object-contain" src={item.src} alt={item.name} />
+                          </div>
+                          <h3 className="font-semibold">{item.name}</h3>
+                          <p className="text-gray-600">{item.title}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                );
+              })()}
+            </div>
+          ) : (
+            <div
+              className={`grid grid-cols-1 ${
+                columns === 4 ? "md:grid-cols-4 overflow-x-hidden" : "md:grid-cols-1"
+              } gap-6 mt-6`}
+            >
+              {items.map((item, index) => (
+                <div key={index} className="text-center">
+                  <Image
+                    className="h-[24rem] w-[28rem] flex items-center justify-center mb-2"
+                    src={item.src}
+                    alt={item.name}
+                  />
+                  <div className="bg-gray-300 ">
+                    {item.image}
+                  </div>
+                  <h3 className="font-semibold">{item.name}</h3>
+                  <p className="text-gray-600">{item.title}</p>
+                </div>
+              ))}
+            </div>
+          )
+        )
       )}
       {items && type === "testimonials" && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">

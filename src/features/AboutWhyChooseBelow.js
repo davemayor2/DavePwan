@@ -1,36 +1,30 @@
 import React from "react";
 import AWCBSection from "./AWCBSection";
 import Image from "next/image";
-import { urbanLegacy, Emeka, Kudirat, Joshua, Okoro, waleGraphic, naomi, chisom, tochukwu,  } from "./assets";
+import { urbanLegacy, Emeka, Kudirat, Joshua, Okoro, waleGraphic, naomi, chisom, tochukwu, korede, precious, amara, pius, yinka } from "./assets";
 
 const AboutWhyChooseBelow = () => {
-  const teamMembers = [
+  // Core team (appears in "Meet Our Team"). Move people between arrays as needed.
+  const coreTeam = [
     {
       name: "Emeka Justine",
       title: "Managing Director",
       src: Emeka,
     },
     {
-      name: "Kudirat Abdulahi",
-      title: "Head of Admin, Asaba Office",
-      src: Kudirat,
-    },
-    
-    {
-      name: "Mr. Joshua Godwin",
-      title: "Mentee",
-      src: Joshua,
-    },
-    
-    {
-      name: "Mr. Iheanacho Okoro",
-      title: "Mentee",
-      src: Okoro,
+      name: "Mr. Pius Dabel",
+      title: "Head of Accounts, Lagos",
+      src: pius,
     },
     {
       name: "Mr. Korede Tiamiyu",
       title: "Head of Operations, Lagos",
-      src: Kudirat,
+      src: korede,
+    },
+    {
+      name: "Ms. Olayinka Ikuomola",
+      title: "Accounts Assitant, Lagos",
+      src: yinka,
     },
     {
       name: "Mr. Isaiah Stanley",
@@ -52,7 +46,30 @@ const AboutWhyChooseBelow = () => {
       title: "Content Strategist",
       src: naomi,
     },
-    
+    {
+      name: "Ms. Precious Chinwe",
+      title: "Receptionist",
+      src: precious,
+    },
+    {
+      name: "Ms. Amarachi ",
+      title: "Administrative Officer",
+      src: amara,
+    },
+  ];
+
+  // Mentees (appears under separate section). Add or remove people here freely.
+  const mentees = [
+    {
+      name: "Mr. Joshua Godwin",
+      title: "Mentee",
+      src: Joshua,
+    },
+    {
+      name: "Mr. Iheanacho Okoro",
+      title: "Mentee",
+      src: Okoro,
+    },
   ];
 
   const testimonials = [
@@ -114,10 +131,19 @@ const AboutWhyChooseBelow = () => {
           iconTitle="Values"
           flexDirection = 'row'
           title="Meet Our Team"
-          items={teamMembers}
+          items={coreTeam}
           // description="Lorem ipsum dolor sit amet consectetur. Feugiat tortor morbi dictum egestas donec mus at porttitor. Magna facilisis duis nunc porttitor metus suspendisse turpis dignissim."
           type="team"
-          columns={4}
+          columns={3}
+          featuredName="Emeka Justine"
+        />
+        <AWCBSection
+          iconTitle="Team"
+          flexDirection='row'
+          title="Mentees"
+          items={mentees}
+          type="team"
+          columns={3}
         />
         <AWCBSection
           iconTitle="What Our Customers Say"
