@@ -1,9 +1,12 @@
 import React from "react";
 import AWCBSection from "./AWCBSection";
 import Image from "next/image";
-import { urbanLegacy, Emeka, Kudirat, Joshua, Okoro, waleGraphic, naomi, chisom, tochukwu, korede, precious, amara, pius, yinka } from "./assets";
+import { Emeka, Kudirat, Joshua, Okoro, waleGraphic, naomi, chisom, tochukwu, korede, precious, amara, pius, yinka } from "./assets";
 
 const AboutWhyChooseBelow = () => {
+  const youtubeVideoId = "LUDJlK8-cfc"; // Set your actual video ID here
+  const youtubeUrl = `https://www.youtube.com/watch?v=${youtubeVideoId}`;
+  const youtubeThumb = `https://img.youtube.com/vi/${youtubeVideoId}/hqdefault.jpg`;
   // Core team (appears in "Meet Our Team"). Move people between arrays as needed.
   const coreTeam = [
     {
@@ -118,12 +121,21 @@ const AboutWhyChooseBelow = () => {
         </div>
       </article>
 
-      <div className="w-full relative overflow-hidden h-[30rem] bg-slate-900">
-        <Image
-          src={urbanLegacy}
-          alt="urban legacy"
-          className="absolute inset-0 w-full object-cover object-center opacity-45 h-full"
-        />
+      <div className="w-full relative overflow-hidden h-[30rem] bg-black">
+        <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" className="group block h-full">
+          <img
+            src={youtubeThumb}
+            alt="Watch on YouTube"
+            className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+          />
+          <span className="absolute inset-0 flex items-center justify-center">
+            <span className="bg-red-600 rounded-full w-16 h-16 flex items-center justify-center shadow-lg opacity-95 group-hover:scale-105 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-8 h-8 ml-1">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
+          </span>
+        </a>
       </div>
 
       <main className="max-w-7xl mx-auto p-6">

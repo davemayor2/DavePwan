@@ -123,18 +123,6 @@ const IndexPage = () => {
       flyerFileName: "ELITE_EMPIRE _ESTATE_Flyer.png",
     },
     {
-      id: "gv1",
-      title: "Green View",
-      location: "Delta",
-      description: "Located in Ogwashi within the Asaba capital territory, Greenview Estate is selling for ₦3.5M in a fast-developing, buy-and-build area with houses and hostels already rising nearby. It sits along a major road and is just 15–20 minutes from key junctions and Asaba International Airport.",
-      imageAlt: "Green View",
-      src: greenView,
-      subscriptionFormUrl: "/downloads/GREEN_VIEW_ESTATE_SUBS_FORM.pdf",
-      flyerUrl: "/downloads/greenView.jpeg",
-      subscriptionFormFileName: "GREEN_VIEW_ESTATE_Subscription_Form.pdf",
-      flyerFileName: "GREEN_VIEW_ESTATE_Flyer.png",
-    },
-    {
       id: "uge1",
       title: "Ugochi Estate",
       location: "Delta",

@@ -8,7 +8,7 @@ const PictureDetailPage = () => {
   const router = useRouter();
   const { id, title, description, src } = router.query;
 
-  // --- UPDATED: differential array with unique download paths ---
+  // --- UPDATED: differential array with unique download paths and YouTube videos ---
   const differential = [
     {
       text: `<div>
@@ -31,6 +31,8 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/urbanLegacy.jpg",
       subscriptionFormFileName: "Urban_Legacy_Subscription_Form.pdf",
       flyerFileName: "Urban_Legacy_Flyer.jpg",
+      // YouTube video for Urban Legacy
+      youtubeVideoId: "QcQWiOSJwuY", // Replace with actual video ID
     },
     {
       text: `<div>
@@ -49,6 +51,8 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/eastview-flyer.pdf",
       subscriptionFormFileName: "Eastview_Subscription_Form.pdf",
       flyerFileName: "Eastview_Flyer.png",
+      // YouTube video for Eastview
+      youtubeVideoId: "LUDJlK8-cfc", // Replace with actual video ID
     },
     {
       text: `<div>
@@ -70,6 +74,8 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/akuRuo.png",
       subscriptionFormFileName: "Aku_Ruo_Uno_Subscription_Form.pdf",
       flyerFileName: "Aku_Ruo_Uno_Flyer.png",
+      // YouTube video for Aku Ruo Uno
+      youtubeVideoId: "W666-iATODg", // Replace with actual video ID
     },
     {
       text: `<div>
@@ -91,6 +97,8 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/koleAyo.png",
       subscriptionFormFileName: "KOLE-AYO_Subscription_Form.pdf",
       flyerFileName: "KOLE-AYO_Flyer.png",
+      // YouTube video for Kole-Ayo
+      youtubeVideoId: "QRtVAPaM_PQ",
     },
     {
       text: `<div>
@@ -111,6 +119,8 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/eliteEmpire.png",
       subscriptionFormFileName: "ELITE_EMPIRE _ESTATE_Subscription_Form.pdf",
       flyerFileName: "ELITE_EMPIRE _ESTATE_Flyer.png",
+      // YouTube video for Eastview
+      youtubeVideoId: "LUDJlK8-cfc",
     },
     {
       text: `<div>
@@ -131,6 +141,8 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/alaomaLuxury.png",
       subscriptionFormFileName: "ALAOMA _LUXURY_ESTATE_Subscription_Form.pdf",
       flyerFileName: "ALAOMA _LUXURY_ESTATE_Flyer.png",
+      // YouTube video for Eastview
+      youtubeVideoId: "ngSYdnSTg1o",
     },
     {
       text: `<div>
@@ -152,6 +164,8 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/eliteEastland2.jpeg",
       subscriptionFormFileName: "Elite_Eastland_Phase_2_Subscription_Form.pdf",
       flyerFileName: "Elite_Eastland_Phase_2_Flyer.jpeg",
+      // YouTube video for Eastview
+      youtubeVideoId: "LUDJlK8-cfc",
     },
     {
       text: `<div>
@@ -173,6 +187,8 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/greenView.jpeg",
       subscriptionFormFileName: "GREEN_VIEW_ESTATE_Subscription_Form.pdf",
       flyerFileName: "GREEN_VIEW_ESTATE_Flyer.png",
+      // YouTube video for Eastview
+      youtubeVideoId: "6q49iRaI0lE",
     },
     {
       text: `<div>
@@ -193,6 +209,8 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/ugwumgbaEstate.jpeg",
       subscriptionFormFileName: "UGWUMBA_Subscription_Form.pdf",
       flyerFileName: "UGWUMBA_Flyer.jpeg",
+      // YouTube video for Eastview
+      youtubeVideoId: "peYKcaN6KdQ",
     },
     {
       text: `<div>
@@ -213,7 +231,10 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/ugwumgbaEstate.jpeg",
       subscriptionFormFileName: "UGWUMBA_Subscription_Form.pdf",
       flyerFileName: "UGWUMBA_Flyer.jpeg",
+      // YouTube video for Eastview
+      youtubeVideoId: "LUDJlK8-cfc",
     },
+    
     {
       text: `<div>
         <p>Elite Eastland Phase 1</p>
@@ -234,7 +255,10 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/eliteEastland1.jpeg",
       subscriptionFormFileName: "Elite_Eastland_Phase_2_Subscription_Form.pdf",
       flyerFileName: "Elite_Eastland_Phase_1_Flyer.jpeg",
+      // YouTube video for Eastview
+      youtubeVideoId: "LUDJlK8-cfc",
     },
+    
     {
       text: `<div>
         <p>Obi-Eze</p>
@@ -254,6 +278,8 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/obiEze.png",
       subscriptionFormFileName: "OBI-EZE_PHASE_Subscription_Form.pdf",
       flyerFileName: "OBI-EZE_PHASE_2_Flyer.png",
+      // YouTube video for Eastview
+      youtubeVideoId: "LUDJlK8-cfc",
     },
     {
       text: `<div>
@@ -275,6 +301,42 @@ const PictureDetailPage = () => {
       flyerUrl: "/downloads/obiEze.png",
       subscriptionFormFileName: "OBI-EZE_PHASE_Subscription_Form.pdf",
       flyerFileName: "OBI-EZE_PHASE_2_Flyer.png",
+      // YouTube video for Eastview
+      youtubeVideoId: "U3HBnv4pakk",
+    },
+    {
+      text: `<div>
+        <p>Lavender Courts</p>
+        <p>Welcome to Lavender Courts Awka – where luxury meets affordability in one of Anambra’s most promising locations.</p>
+        <p> Located at Ndiukwuenu, Awka, this estate is perfect for families, investors, and developers looking for a premium buy-and-build opportunity.</p>
+        <p>💰 Seling Price:</p>
+        <p>464 SQM – ₦8,000,000</p>
+        <p>232 SQM – ₦4,000,000</p>
+        <p>🏘️ Estate Features Include:</p>
+        <p>24hrs Security & CCTV</p>
+        <p>Drainage System</p>
+        <P>Perimeter Fence</p>
+        <p>Tared Road</p>
+        <p>Electricity Supply</p>
+        <p>Street Light</p>
+        <p>📌 Key Landmarks Nearby:</p>
+        <p>13 mins from UNIZIK</p>
+        <p>10 mins from Amansea Junction</p>
+        <p>International Convention Centre</p>
+        <p>Awka Wonderland</p>
+        <p>Dora Akunyili Development Center</p>
+        <p>📝 Title Document: Registered Survey & Deed of Assignment</p>
+        <p>📦 Status: Fully plotted and ready for immediate allocation after payment</p>
+        <p>This is your chance to own land in a secure, developing, and well-structured estate at the heart of Awka’s future growth.</p>
+        <p>📞 For inspection and booking, contact PWAN Elite today!</p>
+      </div>`,
+      // Unique download paths and filenames for Aku Ruo Uno
+      subscriptionFormUrl: "/downloads/OBI-EZE_PHASE_2 SUBS_FORM.pdf",
+      flyerUrl: "/downloads/lavendercourts.png",
+      subscriptionFormFileName: "LAVENDER_COURTS_Subscription_Form.pdf",
+      flyerFileName: "LAVENDER_COURTS_Flyer.png",
+      // YouTube video for Eastview
+      youtubeVideoId: "MaqbNXt8CvM",
     },
     // --- ADD NEW PROPERTY ENTRIES HERE WITH THEIR UNIQUE DOWNLOAD PATHS ---
     // Example for a new property (e.g., id 4, title "The Elite Heights")
@@ -292,13 +354,13 @@ const PictureDetailPage = () => {
 
   const getActiveDiff = (propertyTitle) => {
     // Make sure to add logic for new titles if they map to new differential entries
+    if (propertyTitle === 'Lavender Courts') return 14;
     if (propertyTitle === 'Elite City') return 12;
     if (propertyTitle === 'Obi-Eze') return 11;
     if (propertyTitle === 'Elite Eastland Phase 1') return 10;
     if (propertyTitle === 'Elite Casa') return 9;
     if (propertyTitle === 'Ugwumgba Estate') return 8;
     if (propertyTitle === 'Green View') return 7;
-    if (propertyTitle === 'Elite Eastland Phase 2') return 6;
     if (propertyTitle === 'Alaoma Luxury') return 5;
     if (propertyTitle === 'Elite Empire') return 4;
     if (propertyTitle === 'Kole Ayo Estate') return 3;
@@ -339,61 +401,121 @@ const PictureDetailPage = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center mt-16 py-12">
-      <section className="w-full flex flex-col items-center mx-auto mb-8">
-        <span className="font-semibold text-6xl mb-4">{title}</span>
-        <p className="w-2/3 text-center leading-relaxed">{description}</p>
-      </section>
-      <div className="flex justify-center w-full gap-8 bg-gray-100 shadow-lg p-6 md:p-10">
-        {/* Image Section */}
-        <div className="w-full relative gap-14 items-center flex flex-col h-96 lg:h-[48rem] rounded-lg overflow-hidden mb-6">
-          <div>
-            <Image
-              src={src}
-              alt={title}
-              width={350}
-              height={500}
-              style={{ objectFit: "contain" }}
-              className="rounded-lg"
-            />
-          </div>
-          <div className="flex flex-col sm:flex-row justify-center gap-8 w-full px-4">
-            {/* Download Subscription Form Button - Dynamically sourced */}
-            <a
-              href={currentDifferential.subscriptionFormUrl} // Use dynamic URL
-              download={currentDifferential.subscriptionFormFileName} // Use dynamic filename
-              className="bg-red-500 cursor-pointer hover:bg-gray-300 text-white border border-gray-400 font-mono py-3 px-6 rounded-md transition-colors shadow text-center"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download Subscription Form
-            </a>
-            {/* Download Flyer Button - Dynamically sourced */}
-            <a
-              href={currentDifferential.flyerUrl} // Use dynamic URL
-              download={currentDifferential.flyerFileName} // Use dynamic filename
-              className="cursor-pointer text-red-400 border border-red-400 font-mono py-3 px-6 rounded-md transition-colors shadow text-center"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download Flyer
-            </a>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Hero Section */}
+      <div className="relative bg-white shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              {title}
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              {description}
+            </p>
           </div>
         </div>
       </div>
-      <section className="w-full flex flex-col items-center mx-auto mt-8">
-        <p className="font-medium text-xl mb-4">Gift Your Loved Ones The Gift Of <span className="text-red-400">Homeownership</span></p>
-        <div className="flex flex-col items-start w-2/5">
-          {/* Renders HTML string for property details */}
-          <div dangerouslySetInnerHTML={{ __html: currentDifferential.text }} />
+
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Image Section */}
+          <div className="space-y-6">
+            <div className="relative group">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-white p-4">
+                <Image
+                  src={src}
+                  alt={title}
+                  width={500}
+                  height={600}
+                  style={{ objectFit: "contain" }}
+                  className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+            </div>
+            
+            {/* Download Buttons */}
+            <div className="space-y-4">
+              <a
+                href={currentDifferential.subscriptionFormUrl}
+                download={currentDifferential.subscriptionFormFileName}
+                className="w-full bg-red-500 cursor-pointer hover:bg-gray-300 text-white border border-gray-400 font-mono py-3 px-6 rounded-md transition-colors shadow text-center block"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Subscription Form
+              </a>
+              <a
+                href={currentDifferential.flyerUrl}
+                download={currentDifferential.flyerFileName}
+                className="w-full cursor-pointer text-red-400 border border-red-400 font-mono py-3 px-6 rounded-md transition-colors shadow text-center block"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download Flyer
+              </a>
+            </div>
+          </div>
+
+          {/* Property Details Section */}
+          <div className="space-y-8">
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Property Overview
+              </h2>
+              <div className="prose prose-lg max-w-none">
+                <div dangerouslySetInnerHTML={{ __html: currentDifferential.text }} />
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
-      <button
-        onClick={() => router.back()}
-        className="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition-colors shadow"
-      >
-        Go Back
-      </button>
+      </div>
+      {/* YouTube Video Section */}
+      {currentDifferential.youtubeVideoId && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              Watch Our Property Video
+            </h3>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-xl shadow-2xl"
+                  src={`https://www.youtube.com/embed/${currentDifferential.youtubeVideoId}`}
+                  title={`${title} - Property Video`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Call to Action Section */}
+      <div className="bg-gradient-to-r from-red-500 to-red-600 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Gift Your Loved Ones The Gift Of <span className="text-yellow-300">Homeownership</span>
+          </h2>
+          <p className="text-xl text-red-100 max-w-3xl mx-auto">
+            Invest in your future with our premium real estate opportunities
+          </p>
+        </div>
+      </div>
+
+      {/* Back Button */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="text-center">
+          <button
+            onClick={() => router.back()}
+            className="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
+            ← Back to Properties
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
