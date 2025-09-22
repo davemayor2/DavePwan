@@ -307,7 +307,7 @@ const PictureDetailPage = () => {
     {
       text: `<div>
         <p>Lavender Courts</p>
-        <p>Welcome to Lavender Courts Awka – where luxury meets affordability in one of Anambra’s most promising locations.</p>
+        <p>Welcome to Lavender Courts Awka – where luxury meets affordability in one of Anambra's most promising locations.</p>
         <p> Located at Ndiukwuenu, Awka, this estate is perfect for families, investors, and developers looking for a premium buy-and-build opportunity.</p>
         <p>💰 Seling Price:</p>
         <p>464 SQM – ₦8,000,000</p>
@@ -327,16 +327,45 @@ const PictureDetailPage = () => {
         <p>Dora Akunyili Development Center</p>
         <p>📝 Title Document: Registered Survey & Deed of Assignment</p>
         <p>📦 Status: Fully plotted and ready for immediate allocation after payment</p>
-        <p>This is your chance to own land in a secure, developing, and well-structured estate at the heart of Awka’s future growth.</p>
+        <p>This is your chance to own land in a secure, developing, and well-structured estate at the heart of Awka's future growth.</p>
         <p>📞 For inspection and booking, contact PWAN Elite today!</p>
       </div>`,
-      // Unique download paths and filenames for Aku Ruo Uno
-      subscriptionFormUrl: "/downloads/OBI-EZE_PHASE_2 SUBS_FORM.pdf",
-      flyerUrl: "/downloads/lavendercourts.png",
+      // Unique download paths and filenames for Lavender Courts
+      subscriptionFormUrl: "/downloads/LAVENDER_COURTS_SUBS_FORM.pdf",
+      flyerUrl: "/downloads/lavenderCourts.jpeg",
       subscriptionFormFileName: "LAVENDER_COURTS_Subscription_Form.pdf",
-      flyerFileName: "LAVENDER_COURTS_Flyer.png",
-      // YouTube video for Eastview
+      flyerFileName: "LAVENDER_COURTS_Flyer.jpeg",
+      // YouTube video for Lavender Courts
       youtubeVideoId: "MaqbNXt8CvM",
+    },
+    {
+      text: `<div>
+        <p>Elite Eastland Phase 2</p>
+        <p>Elite Eastland Phase 2 is a prime estate located in Umuelu, Umuagwo, Owerri, along the Port Harcourt–Owerri Expressway. This strategically positioned development offers exceptional investment opportunities in one of Nigeria's fastest-growing regions.</p>
+        <p>🏘️ Estate Features:</p>
+        <p>• Fully fenced and plotted</p>
+        <p>• Deed of Assignment and Registered Survey</p>
+        <p>• Instant allocation after payment</p>
+        <p>• Documents ready within three months</p>
+        <p>📌 Key Landmarks Nearby:</p>
+        <p>• Obinze Army Barracks (just minutes away)</p>
+        <p>• Port Harcourt–Owerri Expressway access</p>
+        <p>• Multiple commercial and residential developments</p>
+        <p>• High ROI potential in growing area</p>
+        <p>💼 Investment Benefits:</p>
+        <p>• Prime location with excellent accessibility</p>
+        <p>• Strong potential for capital appreciation</p>
+        <p>• Perfect for residential or commercial development</p>
+        <p>• Secure investment with proper documentation</p>
+        <p>📞 Contact PWAN Elite today for more information and site inspection!</p>
+      </div>`,
+      // Unique download paths and filenames for Elite Eastland Phase 2
+      subscriptionFormUrl: "/downloads/ELITE_EASTLAND_PHASE_2_SUBS_FORM.pdf",
+      flyerUrl: "/downloads/eliteEastland2.jpeg",
+      subscriptionFormFileName: "Elite_Eastland_Phase_2_Subscription_Form.pdf",
+      flyerFileName: "Elite_Eastland_Phase_2_Flyer.jpeg",
+      // YouTube video for Elite Eastland Phase 2
+      youtubeVideoId: "LUDJlK8-cfc",
     },
     // --- ADD NEW PROPERTY ENTRIES HERE WITH THEIR UNIQUE DOWNLOAD PATHS ---
     // Example for a new property (e.g., id 4, title "The Elite Heights")
@@ -354,7 +383,8 @@ const PictureDetailPage = () => {
 
   const getActiveDiff = (propertyTitle) => {
     // Make sure to add logic for new titles if they map to new differential entries
-    if (propertyTitle === 'Lavender Courts') return 14;
+    if (propertyTitle === 'Elite Eastland Phase 2') return 14;
+    if (propertyTitle === 'Lavender Courts') return 13;
     if (propertyTitle === 'Elite City') return 12;
     if (propertyTitle === 'Obi-Eze') return 11;
     if (propertyTitle === 'Elite Eastland Phase 1') return 10;
